@@ -1,0 +1,17 @@
+name: Tadukoo_Core
+main: com.gmail.realtadukoo.TC.TC
+version: Alpha 0.0.1
+description: The core for all Tadukoo plugins
+author: Tadukoo
+prefix: TC
+loadbefore: [Tadukoo_Bible]
+commands:
+   t:
+      description: The base command for all Tadukoo plugins. Type /t help for help.
+      usage: /<command>
+      permission: TadukooCore.use
+      permission-message: You don't have <permission>.
+permissions:
+   TadukooCore.use:
+      description: Allows use of the plugin.
+      default: true
