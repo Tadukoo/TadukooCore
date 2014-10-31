@@ -16,10 +16,8 @@ import com.gmail.realtadukoo.TC.TC;
 
 public class CoreCommandExec implements CommandExecutor{
 	private static TC plugin;
-	private static boolean permsOn;
-	public CoreCommandExec(TC plugin, boolean permsOn) {
+	public CoreCommandExec(TC plugin) {
 		CoreCommandExec.plugin = plugin;
-		CoreCommandExec.permsOn = permsOn;
 	}
 	
 	@Override

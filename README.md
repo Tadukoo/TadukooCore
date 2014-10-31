@@ -8,7 +8,8 @@ them to work together if there are multiple.
 
 Features
 --------
-TBA.
+* Takes control of /t for all Tadukoo plugins.
+* Saves a list of player names and their UUIDs.
 
 Command Usage
 -------------
@@ -25,12 +26,17 @@ TBA.
 Upcoming Commands/Features
 --------------------------
 Checks for all Tadukoo plugins.
+
 It and all plugins have a function in their main class that checks for other Tadukoo plugins.
 * It gets re-run by each Tadukoo plugin.
+
 Tadukoo Core loads first.
-Tadukoo Essentials loads second.
-Tadukoo Adjustments, Tadukoo Bible, Tadukoo Fake Op, Tadukoo Perms, and Tadukoo Vanilla Feel can all load next.
+
+Tadukoo Adjustments, Tadukoo Bible, Tadukoo Essentials, Tadukoo Fake Op, Tadukoo Perms, and Tadukoo Vanilla Feel can all load next.
+
 Tadukoo Bible Books loads after Tadukoo Bible.
+
+Tadukoo Essentials requires Tadukoo Core to run.
 
 Known Issues
 ------------
