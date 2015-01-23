@@ -11,13 +11,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import com.gmail.realtadukoo.TBP.commands.handling.BibleCommandExec;
-import com.gmail.realtadukoo.TC.TC;
+import com.gmail.realtadukoo.TBP.commands.handling.BComExec;
 
-public class CoreCommandExec implements CommandExecutor{
-	private static TC plugin;
-	public CoreCommandExec(TC plugin) {
-		CoreCommandExec.plugin = plugin;
+public class CComExec implements CommandExecutor{
+	public CComExec() {
+		
 	}
 	
 	@Override
@@ -35,18 +33,18 @@ public class CoreCommandExec implements CommandExecutor{
 		
 		if(cmd.getName().equalsIgnoreCase("t")){
 			if(args.length >= 1){
-				if(args[0].equalsIgnoreCase("b") || args[0].equalsIgnoreCase("bible")){
-					if(plugin.TadukooBible != null){
-						toTadukooBible(sender, "bible", args, playerType);
-					}else{
-						otherPluginMissing(sender, "Bible");
-					}
-				}else if(args[0].equalsIgnoreCase("a") || args[0].equalsIgnoreCase("apocrypha")){
-					if(plugin.TadukooBible != null){
-						toTadukooBible(sender, "apocrypha", args, playerType);
-					}else{
-						otherPluginMissing(sender, "Bible");
-					}
+				CEnumCmds ecmd = CEnumCmds.BIBLE;
+				ecmd = ecmd.fromString(args[0]);
+				if(!ecmd.isAvailable()){
+					otherPluginMissing(sender, ecmd);
+					return true;
+				}
+				if(ecmd == CEnumCmds.BIBLE){
+					toTadukooBible(sender, "bible", args, playerType);
+				}else if(ecmd == CEnumCmds.APOCRYPHA){
+					toTadukooBible(sender, "apocrypha", args, playerType);
+				}else if(ecmd == CEnumCmds.PERM){
+					
 				}
 			}else{
 				sender.sendMessage(ChatColor.GREEN + "Type /t help for help.");
@@ -65,11 +63,11 @@ public class CoreCommandExec implements CommandExecutor{
 			i++;
 		}
 		args = newArgs.toArray(args);
-		BibleCommandExec.onCommand(sender, command, args, playerType);
+		BComExec.onCommand(sender, command, args, playerType);
 	}
 	
-	public static void otherPluginMissing(CommandSender sender, String name){
-		sender.sendMessage(ChatColor.RED + "Tadukoo " + name + " is required for that command.");
-		sender.sendMessage(ChatColor.RED + "Tadukoo Core could not find Tadukoo " + name + ".");
+	public static void otherPluginMissing(CommandSender sender, CEnumCmds ecmd){
+		sender.sendMessage(ChatColor.RED + "Tadukoo " + ecmd.getPlugin() + " is required for that command.");
+		sender.sendMessage(ChatColor.RED + "Tadukoo Core could not find Tadukoo " + ecmd.getPlugin() + ".");
 	}
 }

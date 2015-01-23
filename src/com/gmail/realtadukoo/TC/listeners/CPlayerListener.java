@@ -10,9 +10,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import com.gmail.realtadukoo.TC.TC;
 
-public class CorePlayerListener implements Listener{
+public class CPlayerListener implements Listener{
 	public TC plugin;
-	public CorePlayerListener(TC plugin){
+	public CPlayerListener(TC plugin){
 		this.plugin = plugin;
 	}
 	
@@ -20,8 +20,8 @@ public class CorePlayerListener implements Listener{
 	public void onPlayerJoin(PlayerJoinEvent event){
 		Player player = event.getPlayer();
 		String name = player.getName();
-		UUID id = player.getUniqueId();
-		plugin.getPlayerList().set(name, id);
+		UUID ID = player.getUniqueId();
+		plugin.setUUID(name, ID);
 		plugin.savePlayerList();
 	}
 }

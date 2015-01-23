@@ -1,0 +1,23 @@
+aliases:
+  none: It has no aliases.
+  one: Its alias is {alias1}.
+  two: Its aliases are {alias1} and {alias2}.
+  three: Its aliases are {alias1}, {alias2}, and {alias3}.
+command:
+  error:
+    unknownsender: 'Unknown sender!'
+    commandnotavailable: 'Sorry, {cmd} is not available yet for {type}.'
+    commanddoesntexist: 'Sorry, that command does not exist.'
+    help: 'For help, please type /{type} help.'
+    mustbeplayer: 'You must be a player!'
+    generic: 'An error occured.'
+    notenoughargs: 'Not enough args!'
+    unknownarg: 'Unknown argument {arg}!'
+help:
+  heading: Tadukoo{plugin} Help Page {helpPage}/{maxPages} {title} ({minorPage}/{maxMinorPages}).
+  nextPage: 
+    generic: Type /bible help {nextPage} for the next page.
+    specific: Type /bible help {nextPage} for more info about {command}.
+permission:
+  donthave: 'You don''t have permission.'
+  need: 'You need {perm}'

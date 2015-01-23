@@ -8,12 +8,19 @@ them to work together if there are multiple.
 
 Features
 --------
-* Takes control of /t for all Tadukoo plugins.
+* Takes control of /t for all Tadukoo plugins. (Only does Tadukoo Bible right now)
 * Saves a list of player names and their UUIDs.
+* Hooks into all Tadukoo Plugins (Bible, Bible Books, Chat, Essentials, Fake Op, Mob Spawning, Perms, and Vanilla Feel)
+* Has a language file for use in Core plugin and for basic stuff in other plugins.
 
 Command Usage
 -------------
-TBA.
+/t [plugin] [parameters]
+* Base command for all Tadukoo plugins.
+* See other plugins' pages for specific usage.
+
+/t help [plugin] [page]
+* Shows help for other plugins or a list of plugin helps.
 
 Permissions
 -----------
@@ -25,18 +32,7 @@ TBA.
 
 Upcoming Commands/Features
 --------------------------
-Checks for all Tadukoo plugins.
-
-It and all plugins have a function in their main class that checks for other Tadukoo plugins.
-* It gets re-run by each Tadukoo plugin.
-
-Tadukoo Core loads first.
-
-Tadukoo Adjustments, Tadukoo Bible, Tadukoo Essentials, Tadukoo Fake Op, Tadukoo Perms, and Tadukoo Vanilla Feel can all load next.
-
-Tadukoo Bible Books loads after Tadukoo Bible.
-
-Tadukoo Essentials requires Tadukoo Core to run.
+None planned at the moment.
 
 Known Issues
 ------------

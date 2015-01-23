@@ -1,10 +1,11 @@
 name: Tadukoo_Core
 main: com.gmail.realtadukoo.TC.TC
-version: Alpha 0.0.2
+version: Alpha 0.0.5.1
 description: The core for all Tadukoo plugins
 author: Tadukoo
 prefix: TC
-loadbefore: [Tadukoo_Bible, Tadukoo_Bible_Books]
+loadbefore: [Tadukoo_Bible, Tadukoo_Bible_Books, Tadukoo_Chat, Tadukoo_Essentials, Tadukoo_Fake_Op, 
+	Tadukoo_Mob_Spawning, Tadukoo_Perms, Tadukoo_Vanilla_Feel]
 commands:
    t:
       description: The base command for all Tadukoo plugins. Type /t help for help.
